@@ -1,57 +1,59 @@
-# vibe coding经验
+# Vibe Coding Notes
 
-## 一、提示词工程
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-1. 给 AI 明确的 prompt，尤其是你在意、又容易被它误解的地方。做一个个人主页，“好看、现代”还不够：你想先展示什么信息，喜欢什么排版，都需要说出来。没说的部分，就会由 AI 替你决定。
+## I. Prompt Engineering
 
-2. 审美需要自己判断。可以让 AI 出方案，但最好先找参考，指出具体喜欢哪里。参考图里的字体、留白、信息顺序，比“再高级一点”好解释。明确要求有帮助；把所有想到的要求都塞进去，又可能让重点被淹没。
+1. Give the AI a clear prompt, especially about things you care about that it might misinterpret. For a personal website, “nice and modern” leaves a lot open: what information should come first, and what kind of layout do you like? Anything you leave unspecified becomes a decision for the AI.
 
-3. 可以先给 AI 看一个相近的优秀实现，说明想借鉴哪部分。已有代码会影响它后面怎么写，开头形成的坏习惯也可能一直延续。不过，看过好案例能不能改善结果，还得试；参考项目的规模和需求不同，也可能把架构带偏。
+2. You still need to judge the design. Let the AI propose ideas, but find references and explain what you like about them. Fonts, spacing, and the order of information are easier to discuss than “make it look more premium.” Clear requirements help; adding every requirement you can think of can bury the important ones.
 
-4. 长任务要先调研，再分成几个能检查的小目标。每个阶段都看一次：结果对不对，方向还对不对。探索任务尤其要留意这一点——让 AI“把这个想法实现出来”，可能得到一套能运行的东西，却始终没回答“这个想法值不值得做”。
+3. You can show the AI a good implementation of a similar task and explain which parts you want to borrow. Existing code shapes what it writes next, so bad habits established early can carry on. Whether a good reference improves the result is something to test. A reference built for a different scale or set of requirements can also steer the architecture in the wrong direction.
 
-## 二、软件仓库管理
+4. Do some research before a long task, then split it into smaller goals you can check. At each stage, check both the result and the direction. This matters especially for exploratory work: asking the AI to “implement this idea” may produce something that runs without answering whether the idea is worth pursuing.
 
-1. 多读优秀项目的 README。看完以后，能不能知道它解决什么问题、怎么运行、第一次应该试什么？也可以先想一遍自己会怎么写，再和它比较，看看漏掉了什么。
+## II. Repository Management
 
-2. 让 AI 操作 Git 之前，先看变化的文件，让它解释这一步为什么这样做。至少要分清：改文件是修改工作区，commit 是保存一份本地版本，push 才是把提交发到远端。知道现在处于哪一步，才能判断它有没有做错。
+1. Read good READMEs. After reading one, do you know what problem the project solves, how to run it, and what to try first? Think about how you would write it yourself, then compare and see what you missed.
 
-   一次提交尽量围绕一件事。比如修一个 bug，就别把升级依赖、全项目改格式一起塞进去。之后要查问题或撤回修改，会容易很多。
+2. Before the AI runs Git commands, inspect the changed files and ask it to explain why it is taking that step. At least know the difference between editing files in the working tree, saving a local version with a commit, and sending commits to a remote with a push. Knowing where you are in the process helps you spot mistakes.
 
-3. 想给别人的项目贡献代码，可以按这个流程走：
+   Keep each commit focused on one thing. If you are fixing a bug, leave dependency upgrades and project-wide formatting for separate changes. That makes it easier to investigate problems or undo a change later.
+
+3. To contribute to someone else's project, a typical workflow is:
 
    ```text
-   确认问题 → fork → clone → 开分支 → 修改、测试、提交
-                                        ↓
-                           必要时同步原项目的新提交
-                                        ↓
-                         push 到自己的 fork → 发 PR
-                                        ↓
-                         审阅、修改 → 维护者合入原项目
+   Confirm the issue → fork → clone → create a branch → edit, test, commit
+                                                        ↓
+                                       Sync upstream changes if needed
+                                                        ↓
+                                         Push to your fork → open a PR
+                                                        ↓
+                                    Review and revise → maintainer merges
    ```
 
-   fork 是自己在 GitHub 上的一份仓库，clone 是下载到本地，PR 是请求原项目合入修改。同步时可以 merge，也可以按项目要求 rebase；rebase 会重写提交历史，别人正在依赖的提交不能随手重写。
+   A fork is a repository under your own GitHub account; cloning brings it onto your computer. A pull request asks the original project to merge your changes. To sync changes, you can merge or rebase according to the project's conventions. Rebasing rewrites commit history, so don't casually rewrite commits other people depend on.
 
-4. 可以不断向 AI 追问 best practice，但要让它说明理由：这套做法解决什么问题，适合什么规模，多了哪些维护工作？拿当前项目来判断，别只看它列出的工具和术语。
+4. Keep asking the AI about best practices, but ask for the reasoning too. What problem does the approach solve? What scale is it meant for? What extra maintenance does it require? Judge it against the project you have, rather than the tools and terminology it lists.
 
-## 三、软件工程与 MVP
+## III. Software Engineering and MVPs
 
-1. 先做一个有人愿意用的小版本。MVP（最小可行产品）可以不完整，但要让目标用户真正试到核心功能。例如做笔记整理工具，先拿几篇笔记走通整理过程，再看是否省事、哪里难用。界面做出来了，和需求被验证了，是两件事。
+1. Start with a small version someone would actually use. An MVP—minimum viable product—can be incomplete, but its intended users need to be able to try the core feature. For a note-organizing tool, run a few notes through it first and see whether it saves effort and where it is awkward. Having an interface and having evidence that people need the product are different milestones.
 
-2. 需求还不清楚时，适合反复试做、反馈、修改。把需求、设计、编码、测试排成长阶段，问题可能等到很后面才暴露。MVP 用来试需求，短迭代用来及时调整；两者可以配合，但不代表每次都要推倒重来。
+2. When requirements are unclear, build something, get feedback, and revise. Long, separate phases for requirements, design, coding, and testing can leave problems hidden until late. An MVP helps test the need; short iterations help you adjust. You can use both without starting over every time.
 
-3. 看实际产物，也看失败时会怎样。程序正常跑过一次以后，再试空输入、重复操作、中途出错。AI 写的“已完成”要和结果对得上；测试通过也只覆盖了测试检查的部分。
+3. Inspect the actual result, including what happens when something fails. Once the program works on a normal input, try empty input, repeated operations, and a failure partway through. The AI's “done” should match the result. Passing tests only covers what those tests check.
 
-## 四、需求和架构
+## IV. Requirements and Architecture
 
-1. 在成熟项目里做局部修改，AI 有现成的接口、代码风格和测试可参考。从零开始时，这些决定都得重新做。所以 plan 阶段就要看它给出的结构，尤其是职责怎么分、数据由谁管理。也不用把几年后的需求都提前设计好。
+1. When modifying part of a mature project, the AI has existing interfaces, coding conventions, and tests to follow. Starting from scratch means making those decisions again. Look at the proposed structure during planning, especially how responsibilities are divided and who owns the data. You don't need to design every requirement the project might have years from now.
 
-2. 判断架构是否可维护，可以试着改一个需求：换输入格式，是否必须修改核心算法？换输出方式，是否连读取数据的部分也要改？变化要是总传到不相关的地方，就值得重新划分边界。提前留扩展空间，也要对应具体可能发生的变化。
+2. To judge whether an architecture is maintainable, try changing a requirement. Does a new input format force you to change the core algorithm? Does a new output format also require changes to input handling? If changes keep spreading into unrelated parts, reconsider the boundaries. Room for future changes should correspond to specific changes you can reasonably expect.
 
-3. 遇到需求越来越复杂，先回到业务本身看问题。谁在做什么决定，依据是什么，哪些规则必须一直成立？比如教务系统里的“课程通过了”和“学分已被认定”，含义就不一样。概念没分清，继续加字段、补判断，很容易越改越乱。
+3. When requirements keep getting more complicated, return to the work the software is supposed to support. Who makes which decisions? What are those decisions based on? Which rules must always hold? In a university records system, “passed the course” and “received credit toward a degree” mean different things. If the concepts are unclear, adding fields and conditions can make the code harder to follow.
 
-4. 当前状态和发生过的事，都可能值得保存。只存“余额 100 元”，看不出钱怎么来的；保存逐笔收支，就能解释余额。事件溯源（Event Sourcing）把被系统接受的变化保存为事件，再据此重建状态。
+4. Both the current state and the events that produced it may be worth keeping. A balance of 100 yuan doesn't explain where the money came from; individual transactions do. Event sourcing records accepted changes as events and reconstructs state from them.
 
-   但它有代价：事件格式会变，查询可能要另外维护读模型，重放时也不能重复扣款。并发冲突仍要处理。普通 CRUD（增删改查）也能配合业务逻辑、事务和审计记录处理这些问题，不能看到复杂业务就直接换成事件溯源。
+   It comes with costs. Event formats evolve, queries may need separate read models, and replaying events must not charge someone again. Concurrency conflicts still need handling. Ordinary CRUD—create, read, update, delete—can also work with business logic, transactions, and audit records. A complicated domain alone is not a reason to switch to event sourcing.
 
-   先问自己到底需要什么：只看当前值，还是还要追溯过去的操作和决定？再选设计。
+   First ask what you need: only the current value, or a history of the actions and decisions behind it? Then choose the design.

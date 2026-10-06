@@ -1,22 +1,24 @@
-# 来源说明
+# Sources
 
-整理者：[XSY-28](https://github.com/XSY-28)。
+[English](SOURCES.md) | [简体中文](SOURCES.zh-CN.md)
 
-2026-10-06 更新：根据维护者提供的《生成式软件工程》学习笔记重写 README，沿用笔记的四部分结构。课程官网文字稿用于核对概念，原先参考的社区编码指南保留与这些内容有关的建议。
+Compiled by [XSY-28](https://github.com/XSY-28).
 
-| 材料 | 作者或维护者 | README 中涉及的内容 |
+Updated on 2026-10-06: the README was rewritten from the maintainer's *Generative Software Engineering* study notes, keeping their four-part structure. The official course text was used to check concepts. Relevant advice from the community coding guidelines used in the earlier version was retained.
+
+| Material | Author or maintainer | Topics covered in the README |
 | --- | --- | --- |
-| 《生成式软件工程》学习笔记 | XSY-28 | 四部分的选题、表达和主要观点 |
-| [提示词与上下文工程](https://jyywiki.cn/GSE/2026/lect2.md) | 蒋炎岩，南京大学《生成式软件工程》 | 提示词、审美参考、长任务与探索；成熟项目提供的上下文 |
-| [版本管理](https://jyywiki.cn/GSE/2026/lect3.md)、[版本管理（2）](https://jyywiki.cn/GSE/2026/lect4.md) | 同上 | Git 与项目协作 |
-| [软件工程的来龙去脉](https://jyywiki.cn/GSE/2026/lect5.md) | 同上 | 试做、反馈与开发过程 |
-| [需求和架构（1）](https://jyywiki.cn/GSE/2026/lect6.md) | 同上 | MVP、需求变化、模块边界与事件溯源 |
-| [受 Karpathy 启发的 Claude Code 指南](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md) | multica-ai/andrej-karpathy-skills 仓库维护者 | 明确要求、限制修改范围、按目标验证、避免提前增加复杂性 |
+| *Generative Software Engineering* study notes | XSY-28 | The four-part structure, wording, and main points |
+| [Prompt and Context Engineering](https://jyywiki.cn/GSE/2026/lect2.md) | Yanyan Jiang, Nanjing University's *Generative Software Engineering* course | Prompts, design references, long tasks and exploration; context provided by mature projects |
+| [Version Management](https://jyywiki.cn/GSE/2026/lect3.md) and [Version Management (2)](https://jyywiki.cn/GSE/2026/lect4.md) | Same as above | Git and project collaboration |
+| [The Origins of Software Engineering](https://jyywiki.cn/GSE/2026/lect5.md) | Same as above | Prototypes, feedback, and the development process |
+| [Requirements and Architecture (1)](https://jyywiki.cn/GSE/2026/lect6.md) | Same as above | MVPs, changing requirements, module boundaries, and event sourcing |
+| [Community coding guidelines inspired by Karpathy](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md) | Maintainers of multica-ai/andrej-karpathy-skills | Clear requirements, limited change scope, verification against goals, and avoiding premature complexity |
 
-课程入口：[2026 秋季《生成式软件工程》](https://jyywiki.cn/GSE/2026/)。视频入口：[欢迎来到未来](https://www.bilibili.com/video/BV1pb8o6yE8f/)。
+Course: [Generative Software Engineering, Fall 2026](https://jyywiki.cn/GSE/2026/). Video entry point: [Welcome to the Future](https://www.bilibili.com/video/BV1pb8o6yE8f/).
 
-README 是学习笔记的整理与补充，不是逐字摘录。课程部分依据官网文字稿，未完成全部视频的逐段核对。“给 AI 参考优秀实现能否改善结果”在第二讲文字稿中是待验证的猜测，这里保留为可以尝试的办法。
+The README edits and expands the study notes; it is not a verbatim transcript. Course-related material is based on the official text. Not all videos have been checked segment by segment. Lecture 2 presents the idea of showing an AI a good implementation to improve its output as an untested hypothesis; it remains a suggestion to try here.
 
-Karpathy 编码指南由社区维护，不是 Karpathy 本人的官方仓库。
+The Karpathy-inspired guidelines are maintained by the community, not in an official repository owned by Karpathy.
 
-课程官网标注 CC BY-NC 4.0，社区指南 README 标注 MIT。本仓库的整理稿采用 CC BY-NC 4.0；原材料仍按各自许可使用，署名不表示原作者审阅或认可本文。
+The course website specifies CC BY-NC 4.0, and the community guidelines' README specifies MIT. This repository's edited text uses CC BY-NC 4.0. Source materials retain their own licenses. Attribution does not imply that the original authors reviewed or endorsed these notes.
