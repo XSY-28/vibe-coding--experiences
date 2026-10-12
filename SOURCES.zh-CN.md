@@ -6,6 +6,8 @@
 
 2026-10-06 更新：根据维护者提供的《生成式软件工程》学习笔记重写 README，沿用笔记的四部分结构。课程官网文字稿用于核对概念，原先参考的社区编码指南保留与这些内容有关的建议。
 
+2026-10-12 更新：补充可生长的架构与 Unix philosophy，中英文同步。
+
 | 材料 | 作者或维护者 | README 中涉及的内容 |
 | --- | --- | --- |
 | 《生成式软件工程》学习笔记 | XSY-28 | 四部分的选题、表达和主要观点 |
@@ -13,6 +15,7 @@
 | [版本管理](https://jyywiki.cn/GSE/2026/lect3.md)、[版本管理（2）](https://jyywiki.cn/GSE/2026/lect4.md) | 同上 | Git 与项目协作 |
 | [软件工程的来龙去脉](https://jyywiki.cn/GSE/2026/lect5.md) | 同上 | 试做、反馈与开发过程 |
 | [需求和架构（1）](https://jyywiki.cn/GSE/2026/lect6.md) | 同上 | MVP、需求变化、模块边界与事件溯源 |
+| [需求和架构（2）](https://jyywiki.cn/GSE/2026/lect7.md) | 同上 | 可生长的架构、小工具组合与文本流接口 |
 | [受 Karpathy 启发的 Claude Code 指南](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md) | multica-ai/andrej-karpathy-skills 仓库维护者 | 明确要求、限制修改范围、按目标验证、避免提前增加复杂性 |
 
 课程入口：[2026 秋季《生成式软件工程》](https://jyywiki.cn/GSE/2026/)。视频入口：[欢迎来到未来](https://www.bilibili.com/video/BV1pb8o6yE8f/)。

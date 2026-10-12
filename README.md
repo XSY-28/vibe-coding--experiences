@@ -57,3 +57,7 @@
    It comes with costs. Event formats evolve, queries may need separate read models, and replaying events must not charge someone again. Concurrency conflicts still need handling. Ordinary CRUD—create, read, update, delete—can also work with business logic, transactions, and audit records. A complicated domain alone is not a reason to switch to event sourcing.
 
    First ask what you need: only the current value, or a history of the actions and decisions behind it? Then choose the design.
+
+5. Leave room for the architecture to grow. Build the features you need now, with room to reuse and combine them later. A new requirement might mean adding a processing step or replacing an implementation while leaving the other parts alone. During design, decide which interfaces should stay stable and where changes can happen.
+
+6. Borrow from the Unix philosophy: let small tools each do one thing well, then combine them. Reading logs, filtering errors, and counting records can be separate tools connected through pipes. Text streams are a common interface for these tools. Agree on input and output formats, and let users decide how to combine them.

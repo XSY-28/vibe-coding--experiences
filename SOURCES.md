@@ -6,6 +6,8 @@ Compiled by [XSY-28](https://github.com/XSY-28).
 
 Updated on 2026-10-06: the README was rewritten from the maintainer's *Generative Software Engineering* study notes, keeping their four-part structure. The official course text was used to check concepts. Relevant advice from the community coding guidelines used in the earlier version was retained.
 
+Updated on 2026-10-12: added notes on architecture that can grow and the Unix philosophy in both languages.
+
 | Material | Author or maintainer | Topics covered in the README |
 | --- | --- | --- |
 | *Generative Software Engineering* study notes | XSY-28 | The four-part structure, wording, and main points |
@@ -13,6 +15,7 @@ Updated on 2026-10-06: the README was rewritten from the maintainer's *Generativ
 | [Version Management](https://jyywiki.cn/GSE/2026/lect3.md) and [Version Management (2)](https://jyywiki.cn/GSE/2026/lect4.md) | Same as above | Git and project collaboration |
 | [The Origins of Software Engineering](https://jyywiki.cn/GSE/2026/lect5.md) | Same as above | Prototypes, feedback, and the development process |
 | [Requirements and Architecture (1)](https://jyywiki.cn/GSE/2026/lect6.md) | Same as above | MVPs, changing requirements, module boundaries, and event sourcing |
+| [Requirements and Architecture (2)](https://jyywiki.cn/GSE/2026/lect7.md) | Same as above | Architecture that can grow, tool composition, and text-stream interfaces |
 | [Community coding guidelines inspired by Karpathy](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/README.zh.md) | Maintainers of multica-ai/andrej-karpathy-skills | Clear requirements, limited change scope, verification against goals, and avoiding premature complexity |
 
 Course: [Generative Software Engineering, Fall 2026](https://jyywiki.cn/GSE/2026/). Video entry point: [Welcome to the Future](https://www.bilibili.com/video/BV1pb8o6yE8f/).
